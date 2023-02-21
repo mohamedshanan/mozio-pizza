@@ -1,33 +1,11 @@
 package com.shannan.moziopizza.feature.album.domain
 
-import com.shannan.moziopizza.feature.album.domain.enum.ImageSize
-import com.shannan.moziopizza.feature.album.domain.model.Album
-import com.shannan.moziopizza.feature.album.domain.model.Image
-import com.shannan.moziopizza.feature.album.domain.model.Tag
-import com.shannan.moziopizza.feature.album.domain.model.Track
+import com.shannan.moziopizza.feature.album.data.datasource.api.model.Flavor
 
 object DomainFixtures {
 
-    internal fun getAlbum(
-        name: String = "albumName",
-        artist: String = "artistName",
-        mbId: String? = "mbId",
-        images: List<Image> = listOf(getImage()),
-        tracks: List<Track> = listOf(getTrack()),
-        tags: List<Tag> = listOf(getTag()),
-    ): Album = Album(name, artist, mbId, images, tracks, tags)
-
-    internal fun getImage(
-        url: String = "url_${ImageSize.EXTRA_LARGE}",
-        size: ImageSize = ImageSize.EXTRA_LARGE,
-    ) = Image(url, size)
-
-    private fun getTrack(
-        name: String = "track",
-        duration: Int = 12,
-    ) = Track(name, duration)
-
-    private fun getTag(
-        name: String = "tag",
-    ) = Tag(name)
+    internal fun getFlavors(
+        name: String = "name",
+        price: Float = 0.0f
+    ): Flavor = Flavor(name, price)
 }

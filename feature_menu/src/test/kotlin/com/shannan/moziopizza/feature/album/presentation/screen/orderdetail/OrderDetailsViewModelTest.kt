@@ -1,7 +1,5 @@
-package com.shannan.moziopizza.feature.album.presentation.screen.albumdetail
+package com.shannan.moziopizza.feature.album.presentation.screen.orderdetail
 
-import com.shannan.moziopizza.feature.album.presentation.screen.orderdetail.OrderDetailsFragmentArgs
-import com.shannan.moziopizza.feature.album.presentation.screen.orderdetail.OrderDetailsViewModel
 import com.shannan.moziopizza.feature.album.presentation.screen.orderdetail.OrderDetailsViewModel.UiState
 import com.shannan.moziopizza.library.testutils.CoroutinesTestDispatcherExtension
 import com.shannan.moziopizza.library.testutils.InstantTaskExecutorExtension

@@ -22,11 +22,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.fragment.navArgs
-import com.igorwojda.showcase.feature.album.R
 import com.shannan.moziopizza.base.presentation.activity.BaseFragment
 import com.shannan.moziopizza.base.presentation.compose.composable.DataNotFoundAnim
 import com.shannan.moziopizza.base.presentation.compose.composable.ProgressIndicator
-import com.shannan.moziopizza.feature.album.data.datasource.api.model.Flavor
+import com.shannan.moziopizza.feature.album.R
 import kotlinx.coroutines.flow.StateFlow
 import org.koin.androidx.navigation.koinNavGraphViewModel
 
@@ -92,7 +91,7 @@ private fun OrderDetailsScreen(uiStateFlow: StateFlow<OrderDetailsViewModel.UiSt
                     Spacer(
                         modifier = Modifier
                             .background(Color.Transparent)
-                            .padding(4.dp)
+                            .padding(2.dp)
                     )
 
                     Row(
@@ -124,13 +123,5 @@ private fun OrderDetailsScreen(uiStateFlow: StateFlow<OrderDetailsViewModel.UiSt
                 }
             }
         }
-    }
-}
-
-@Composable
-private fun FlavorRow(flavor: Flavor) {
-    Row {
-        Text(flavor.name)
-        Text("${flavor.price}")
     }
 }
