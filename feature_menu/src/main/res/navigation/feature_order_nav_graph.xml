@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Id of navigation graph matches id of the bottom_nav_menu.xml item (to make bottom menu navigation work).-->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/albumNavGraph"
+    app:startDestination="@id/albumListFragment">
+    <fragment
+        android:id="@+id/albumListFragment"
+        android:name="com.shannan.moziopizza.feature.album.presentation.screen.pizzalist.PizzaFlavorsFragment"
+        android:label="AlbumListFragment">
+        <action
+            android:id="@+id/actionAlbumListToAlbumDetail"
+            app:destination="@id/albumDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/albumDetailFragment"
+        android:name="com.shannan.moziopizza.feature.album.presentation.screen.orderdetail.OrderDetailsFragment"
+        android:label="AlbumDetailFragment">
+        <argument
+            android:name="firstFlavorName"
+            app:argType="string" />
+        <argument
+            android:name="firstFlavorPrice"
+            app:argType="float" />
+        <argument
+            android:name="secondFlavorName"
+            app:argType="string" />
+        <argument
+            android:name="secondFlavorPrice"
+            app:argType="float" />
+    </fragment>
+</navigation>

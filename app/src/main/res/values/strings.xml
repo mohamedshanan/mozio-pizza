@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mozio Pizza</string>
+
+    <!--Dynamic module titles-->
+    <string name="feature_album">feature album</string>
+
+    <!--Bottom menu-->
+    <string name="albums">Albums</string>
+    <string name="favorites">Favorites</string>
+    <string name="profile">Profile</string>
+</resources>
