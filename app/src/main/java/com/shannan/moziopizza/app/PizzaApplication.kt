@@ -4,7 +4,7 @@ import android.app.Application
 import com.shannan.moziopizza.BuildConfig
 import com.shannan.moziopizza.appModule
 import com.shannan.moziopizza.base.baseModule
-import com.shannan.moziopizza.feature.album.featureAlbumModules
+import com.shannan.moziopizza.feature.flavors.featureAlbumModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext

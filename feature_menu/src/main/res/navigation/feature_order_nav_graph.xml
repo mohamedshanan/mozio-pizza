@@ -5,7 +5,7 @@
     app:startDestination="@id/albumListFragment">
     <fragment
         android:id="@+id/albumListFragment"
-        android:name="com.shannan.moziopizza.feature.album.presentation.screen.pizzalist.PizzaFlavorsFragment"
+        android:name="com.shannan.moziopizza.feature.flavors.presentation.screen.pizzalist.PizzaFlavorsFragment"
         android:label="AlbumListFragment">
         <action
             android:id="@+id/actionAlbumListToAlbumDetail"
@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/albumDetailFragment"
-        android:name="com.shannan.moziopizza.feature.album.presentation.screen.orderdetail.OrderDetailsFragment"
+        android:name="com.shannan.moziopizza.feature.flavors.presentation.screen.orderdetail.OrderDetailsFragment"
         android:label="AlbumDetailFragment">
         <argument
             android:name="firstFlavorName"
