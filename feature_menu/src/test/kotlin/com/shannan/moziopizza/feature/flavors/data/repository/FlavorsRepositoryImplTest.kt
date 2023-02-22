@@ -6,12 +6,10 @@ import com.shannan.moziopizza.feature.flavors.data.DataFixtures
 import com.shannan.moziopizza.feature.flavors.data.datasource.api.model.Flavor
 import com.shannan.moziopizza.feature.flavors.data.datasource.api.service.FlavorsRetrofitService
 import io.mockk.coEvery
-import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
-import java.net.UnknownHostException
 
 class FlavorsRepositoryImplTest {
 
@@ -32,14 +30,12 @@ class FlavorsRepositoryImplTest {
         val actual = runBlocking { cut.getFlavors() }
 
         // then
-        actual shouldBeEqualTo Result.Success(flavors)
+        actual shouldBeEqualTo Result.Success(listOf(flavors))
     }
 
     @Test
     fun `searchAlbum handles api error `() {
         // given
-        val phrase = "phrase"
-
         coEvery { mockService.getPizzaFlavors() } returns mockk<ApiResult.Error<List<Flavor>>>()
 
         // when
@@ -64,7 +60,7 @@ class FlavorsRepositoryImplTest {
         val actual = runBlocking { cut.getFlavors() }
 
         // then
-        actual shouldBeEqualTo Result.Success(flavor)
+        actual shouldBeEqualTo Result.Success(listOf(flavor))
     }
 
     @Test

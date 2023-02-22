@@ -34,14 +34,14 @@ class FlavorsListViewModelTest {
     )
 
     @Test
-    fun `onEnter emits state error`() = runTest {
+    fun `onEnter emits state loading`() = runTest {
         // given
         coEvery { mockGetAlbumListUseCase.invoke() } returns Result.Success(emptyList())
 
         // then
         advanceUntilIdle()
 
-        cut.uiStateFlow.value shouldBeEqualTo FlavorListViewModel.UiState.Error
+        cut.uiStateFlow.value shouldBeEqualTo FlavorListViewModel.UiState.Loading
     }
 
     @Test
@@ -52,6 +52,7 @@ class FlavorsListViewModelTest {
         val secondFlavorName = "Super cheese"
         val secondFlavorPrice = 11.0f
         val flavors = listOf(Flavor(firstFlavorName, firstFlavorPrice), Flavor(secondFlavorName, secondFlavorPrice))
+        cut.onEnter()
         coEvery { mockGetAlbumListUseCase.invoke() } returns Result.Success(flavors)
 
         // then
@@ -80,6 +81,7 @@ class FlavorsListViewModelTest {
         // when
         cut.setFirstFlavor(Flavor(firstFlavorName, firstFlavorPrice))
         cut.setSecondFlavor(Flavor(secondFlavorName, secondFlavorPrice))
+        cut.completeOrderClicked()
 
         // then
         coVerify { mockNavManager.navigate(navDirections) }
